@@ -7,26 +7,35 @@ import statsData from '../../data.json';
     <div class="stats">
         <div class="stats-container" v-if="this.$store.state.currentState === 'daily'">
             <div v-for="(stat, i) in statsData" v-bind:key="i" class="stats-container__stat">
-                <div :class="stat.title.toLowerCase().split(' ').join('_')"></div> 
-                <p>Tittle: {{ stat.title }}</p>
-                <p>Hours: {{ stat.timeframes.daily.current }}</p>
-                <p>Week thingy: {{ stat.timeframes.daily.previous }}</p>
+                <div :class="stat.title.toLowerCase().split(' ').join('_') + ' card'"></div> 
+                <div class="card-first-row">
+                    <p>{{ stat.title }}</p>
+                    <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+                </div>
+                <p class="stats__hours">{{ stat.timeframes.daily.current }}hrs</p>
+                <p class="stats__lw-hours">Last week - {{ stat.timeframes.daily.previous }}hrs</p>
             </div>
         </div>
         <div class="stats-container" v-if="this.$store.state.currentState === 'weekly'">
             <div v-for="(stat, i) in statsData" v-bind:key="i" class="stats-container__stat">
-                <div :class="stat.title.toLowerCase().split(' ').join('_')"></div>
-                <p>Tittle: {{ stat.title }}</p>
-                <p>Hours: {{ stat.timeframes.weekly.current }}</p>
-                <p>Week thingy: {{ stat.timeframes.weekly.previous }}</p>
+                <div :class="stat.title.toLowerCase().split(' ').join('_') + ' card'"></div>
+                <div class="card-first-row">
+                    <p>{{ stat.title }}</p>
+                    <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+                </div>
+                <p class="stats__hours">{{ stat.timeframes.weekly.current }}hrs</p>
+                <p class="stats__lw-hours">Last week - {{ stat.timeframes.weekly.previous }}hrs</p>
             </div>
         </div>
         <div class="stats-container" v-if="this.$store.state.currentState === 'monthly'">
             <div v-for="(stat, i) in statsData" v-bind:key="i" class="stats-container__stat">
-                <div :class="stat.title.toLowerCase().split(' ').join('_')"></div>
-                <p>Tittle: {{ stat.title }}</p>
-                <p>Hours: {{ stat.timeframes.monthly.current }}</p>
-                <p>Week thingy: {{ stat.timeframes.monthly.previous }}</p>
+                <div :class="stat.title.toLowerCase().split(' ').join('_') + ' card'"></div>
+                <div class="card-first-row">
+                    <p>{{ stat.title }}</p>
+                    <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+                </div>
+                <p class="stats__hours">{{ stat.timeframes.monthly.current }}hrs</p>
+                <p class="stats__lw-hours">Last week - {{ stat.timeframes.monthly.previous }}hrs</p>
             </div>
         </div>
 
@@ -34,4 +43,5 @@ import statsData from '../../data.json';
 </template>
 
 <style scoped>
+
 </style>

@@ -13,11 +13,18 @@
 </script>
 
 <template>
-  <h1>Hello WORLD!!</h1>
-  <button @click="showDaily">Daily</button>
-  <button @click="showWeekly">Weekly</button>
-  <button @click="showMonthly">Monthly</button>
-  <h2>Your state is: {{ this.$store.state.currentState }}</h2>
+  <div class="user-container">
+    <div class="user">
+      <img src="../assets/image-jeremy.png" alt="">
+      <span>Report for</span>
+      <h1>Jeremy Robson</h1>
+    </div>
+    <div class="buttons">
+      <a @click="showDaily">Daily</a>
+      <a @click="showWeekly">Weekly</a>
+      <a @click="showMonthly">Monthly</a>
+    </div>
+  </div>
 </template>
 
 <style scoped>
